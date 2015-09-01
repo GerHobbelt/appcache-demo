@@ -54,9 +54,11 @@ var offliner = (function() {
 
 	return {
 		isOffline: false, // this is set in fallback.html
-		addCachingIframe: function() {
+		addCachingIframe: function(baseDir) {
+			// make sure baseDir ends with a '/' when specified.
+			baseDir = baseDir.replace(/([^\/])$/, "$1/") | "/";
 			$body.prepend(
-				'<iframe src="/localstorage-cache/fallback.html#iframed" style="position:absolute;top:-999em;visibility:hidden"></iframe>'
+				'<iframe src="' + baseDir + 'fallback.html#iframed" style="position:absolute;top:-999em;visibility:hidden"></iframe>'
 			);
 		},
 		cacheCurrentPage: function() {
