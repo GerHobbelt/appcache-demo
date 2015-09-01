@@ -21,11 +21,6 @@ a {
 
 .offline-toggler {
 	position: absolute;
-	top: 65px;
+	top: 1.7em;
 	right: 1.7em;
-	font-size: 1em;
-}
-
-h1 {
-	margin-bottom: 41px;
 }
